@@ -1,0 +1,239 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>icra</title>
+	<link href="css/bootstrap.min.css" rel="stylesheet">
+	<link href="css/global.css" rel="stylesheet">
+	<link href="css/index.css" rel="stylesheet">
+	<link rel="stylesheet" type="text/css" href="css/font-awesome.min.css" />
+	<link href="https://fonts.googleapis.com/css2?family=Poppins&display=swap" rel="stylesheet">
+	<script src="js/jquery-2.1.1.min.js"></script>
+    <script src="js/bootstrap.min.js"></script>
+
+  </head>
+<body>
+
+<section>
+	<div class="header"> 
+		<div class="contact-info"> 
+			<a href="mailto:icrakarnataka@yahoo.com">icrakarnataka@yahoo.com</a> 
+			<span>9980074679</span> 
+		</div>
+	<div class="social-icons"> 
+		<a href="#"><i class="fa fa-facebook"></i></a> 
+		<a href="#"><i class="fa fa-twitter"></i></a> 
+		<a href="#"><i class="fa fa-linkedin"></i></a> 
+		<a href="#"><i class="fa fa-instagram"></i></a> 
+	</div> 
+</div>
+<div class="brand" style="margin:20px;">icrakarnataka</div>
+<div class="menu-icon">&#9776;</div>
+<div class="nav"> 
+	<a href="index.html">Home</a> 
+	<div class="dropdown"> 
+		<a href="#">What We Do</a> 
+		<div class="dropdown-content"> 
+			<a href="FieldIntervention.html">Field Intervention</a> 
+			<div class="dropdown"> 
+				<a href="Publications.html">Publication</a> 
+				<div class="sub-dropdown"> 
+					<a href="Books.html">Books</a> 
+					<a href="Magazine.html">Magazine</a> 
+				</div> 
+			</div> 
+			<a href="ActionResearch.html">Action Research</a> 
+			<a href="TrainingandWorkshop.html">Training and Workshop</a> 
+			<!-- <a href="#">Marketing</a>  -->
+		</div> 
+	</div> 
+	<a href="about.html">About Us</a> 
+	<a href="gallery.html">Gallery</a> 
+	<a href="contact.html">Contact Us</a> 
+</div> 
+
+
+
+
+<section>
+
+    <!-- Gallery Heading -->
+    <div class="gallery-heading">
+        <h1>Gallery</h1>
+    </div>
+
+    <!-- Image Gallery -->
+    <div class="gallery">
+        <img src="img/distinct 2.jpg" alt="Image 1" class="gallery-item">
+        <img src="img/distinct 3.jpg" alt="Image 2" class="gallery-item">
+        <img src="img/heroimg2.png" alt="Image 3" class="gallery-item">
+        <img src="img/heroimg3.png" alt="Image 4" class="gallery-item">
+        <img src="img/heroimg4.jpeg" alt="Image 5" class="gallery-item">
+        <img src="img/heroimg5.jpeg" alt="Image 6" class="gallery-item">
+    </div>
+
+    <!-- Pop-Up Modal -->
+    <div id="popup-modal" class="popup-modal">
+        <span class="close-btn">&times;</span>
+        <img class="popup-image" id="popup-image" alt="Popup">
+        <span class="prev-arrow">&#10094;</span>
+        <span class="next-arrow">&#10095;</span>
+    </div>
+
+    <script>
+        const galleryItems = document.querySelectorAll('.gallery-item');
+const popupModal = document.getElementById('popup-modal');
+const popupImage = document.getElementById('popup-image');
+const closeBtn = document.querySelector('.close-btn');
+const prevArrow = document.querySelector('.prev-arrow');
+const nextArrow = document.querySelector('.next-arrow');
+
+let currentIndex = 0;
+
+// Open pop-up
+function openPopup(index) {
+    currentIndex = index;
+    popupImage.src = galleryItems[currentIndex].src;
+    popupModal.style.display = 'flex';
+}
+
+// Close pop-up
+function closePopup() {
+    popupModal.style.display = 'none';
+}
+
+// Show previous image
+function showPrevImage() {
+    currentIndex = (currentIndex - 1 + galleryItems.length) % galleryItems.length;
+    popupImage.src = galleryItems[currentIndex].src;
+}
+
+// Show next image
+function showNextImage() {
+    currentIndex = (currentIndex + 1) % galleryItems.length;
+    popupImage.src = galleryItems[currentIndex].src;
+}
+
+// Event Listeners
+galleryItems.forEach((item, index) => {
+    item.addEventListener('click', () => openPopup(index));
+});
+
+closeBtn.addEventListener('click', closePopup);
+prevArrow.addEventListener('click', showPrevImage);
+nextArrow.addEventListener('click', showNextImage);
+
+// Close modal on outside click
+popupModal.addEventListener('click', (e) => {
+    if (e.target === popupModal) closePopup();
+});
+    </script>
+
+
+</section>
+
+
+
+
+<section id="footer">
+
+	<footer class="footer"> 
+		<div class="footer-logo"> 
+			<h2>icrakarnataka</h2> 
+			<p style="color: antiquewhite;">Lorem ipsum dolor sit amet, con sec tetur adipiscing elit, sed do eiusmod tempor incididunt ut.</p> 
+		</div> 
+		<div class="footer-links"> 
+			<h3>Company</h3> 
+			<ul> 
+				<li>
+					<a href="index.html">Home</a>
+				</li> 
+				<li>
+					<a href="FieldIntervention.html">What We Do</a>
+				</li> 
+				<li>
+					<a href="about.html">About Us</a>
+				</li> 
+				<li>
+					<a href="gallery.html">Gallery</a>
+				</li> 
+				<li>
+					<a href="contact.html">Contact Us</a>
+				</li> 
+			</ul> 
+		</div> 
+		<div class="footer-contact"> 
+			<h3>Resources</h3> 
+			<ul> 
+				<li>
+					<a href="#">Privacy Policy</a>
+				</li> 
+				<li>
+					<a href="#">Terms and Conditions</a>
+				</li> 
+				<li>
+					<a href="#">Disclaimer</a>
+				</li> 
+			</ul> 
+			<h3>Get in Touch</h3> 
+			<ul> 
+				<li>Location: Bangalore, Karnataka</li> 
+				<li>
+					Email: <a href="mailto:icrakarnataka@yahoo.com">icrakarnataka@yahoo.com</a>
+				</li> 
+				<li>Phone: 080-41626254</li> 
+				<li>Mobile: 9980074679</li> 
+				<li class="social-icons"> 
+					<a href="#"><img src="https://w7.pngwing.com/pngs/289/826/png-transparent-facebook-vector-brand-logos-icon-thumbnail.png" alt="Facebook"></a> 
+					<a href="#"><img src="https://static.vecteezy.com/system/resources/thumbnails/008/385/586/small_2x/twitter-social-media-icon-symbol-design-element-illustration-free-vector.jpg" alt="Twitter"></a> 
+					<a href="#"><img src="https://static.vecteezy.com/system/resources/previews/027/654/482/non_2x/linkedin-glyph-icon-for-personal-and-commercial-use-free-vector.jpg" alt="LinkedIn"></a> 
+					<a href="#"><img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSQFxtoPd3MV846K6PKweQaSEuCikUtQFATCg&s" alt="Instagram"></a> 
+					<a href="#"><img src="https://static.vecteezy.com/system/resources/thumbnails/008/385/631/small/youtube-social-media-icon-logo-symbol-design-illustration-free-vector.jpg" alt="YouTube"></a> 
+				</li> 
+			</ul> 
+		</div> 
+	</footer> 
+	<div class="footer-bottom"> 
+		<p style="color: antiquewhite;">Copyright© 2024 icrakarnataka, All rights reserved. Powered by Cojective.in</p>
+	
+	
+	
+	</section>
+	
+	<script>
+	$(document).ready(function(){
+	
+	/*****Fixed Menu******/
+	var secondaryNav = $('.cd-secondary-nav'),
+	   secondaryNavTopPosition = secondaryNav.offset().top;
+		$(window).on('scroll', function(){
+			var navbar_height = document.querySelector('.navbar').offsetHeight;
+			var top = 30;
+			if($(window).scrollTop() > secondaryNavTopPosition ) {
+				secondaryNav.addClass('is-fixed');	
+				$("body").css("padding-top", navbar_height);
+			} else {
+				secondaryNav.removeClass('is-fixed');
+				$("body").css("padding-top", 0);
+			}
+		});	
+		
+	});
+	</script>
+	
+	<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.8.3/jquery.js"></script>
+	
+	<script src="js/smoothbox.js"></script>
+	
+	<script>
+	document.querySelector('.menu-icon').addEventListener('click', function() {
+		document.querySelector('.nav').classList.toggle('active');
+	  });
+	</script>
+	
+	</body>
+	 
+	</html>
+	
